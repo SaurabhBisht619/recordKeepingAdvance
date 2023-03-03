@@ -1,0 +1,38 @@
+
+.field-btn{
+    background-color: rgb(121, 235, 121);
+    border: none;
+    width: 40px;
+    cursor: pointer;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.field_val{
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+    background-color: antiquewhite;
+    padding: 10px 40px;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.delete-btn{
+    color: #e61717;
+}
+
+.deleteAll{
+    background-color: #ef6262;
+    border: none;
+    width: 10vw;
+    padding: 8px 0px;
+    font-size: large;
+    cursor: pointer;
+}

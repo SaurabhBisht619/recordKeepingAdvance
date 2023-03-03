@@ -1,0 +1,87 @@
+1. ------------------------ Refresh krne me data na jay ------------------------
+
+// Get data from the local storage
+  const getLocalItem =()=>{
+    let data = localStorage.getItem("myKey");
+    if(data){
+      return JSON.parse(localStorage.getItem("myKey"))
+    }
+    else {
+      return [];
+    }
+  }
+
+const [data,setData] = useState(getLocalItem);
+
+// Set data into the local storage
+    useEffect(()=>{
+        localStorage.setItem("myKey",JSON.stringify(data))
+    },[data])
+
+
+2. ------------------------ Enter krne me submit ho jay ------------------------
+
+const press = (e)=>{
+      if(e.charCode===13){
+        addData();
+      }
+    }
+
+    onKeyPress={(e)=> press(e)}
+
+3. ------------------------ Delete All button ------------------------
+
+    const deleteAll =()=>{
+      setData([]);
+      flag=false;
+    }
+ 
+    {   (data.length>0)?flag=true:flag=false  }
+
+    { (flag===false)?"":<button onClick={deleteAll} className='deleteAll'>Delete All</button>}
+
+4. ------------------------ Form Validation ------------------------
+    const val = /^[^\s@]+@[^\s@]+\.[^\s@1]{2,}$/i;
+    const addData = ()=>{
+      if(name.length===0){
+        alert("Enter name");
+        return;
+      }
+      else  if(email.length===0){
+        alert("Enter email")
+        return;
+      }
+      else  if(name.length<3){
+        alert("Enter valid name")
+        return;
+      }
+      else  if(email.length<10){
+        alert("Enter valid email")
+        return;
+      }
+      else if(!val.test(email)){
+        alert("Please enter valid Email")
+        return;
+      }
+
+5. ------------------------ Alert ------------------------
+
+ const [alert, setAlert] = useState({ show: false });
+ inside condition = let text="Enter valid email"
+        handleAlert(text);
+        return;
+
+{alert.show && <Alert type={alert.type} text={alert.text} />}
+alert.js and css
+
+
+6. ------------------------ Copy and Paste not Allowed ------------------------
+
+onCopy={copyFun}
+
+const copyFun = ()=>{
+      let text="Copy of contant is not allowed"
+      handleAlert(text);
+      return;
+    }
+
